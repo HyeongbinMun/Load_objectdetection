@@ -6,6 +6,7 @@ class Result:
         self.json_path = 'labels.json'
         self.size = [960, 540]
         self.index = []
+        self.count = 0
 
     def convert(self, x1, y1, x2, y2):
         dw = 1./self.size[0]
@@ -19,6 +20,9 @@ class Result:
         w = round(w * dw, 6)
         y = round(y * dh, 6)
         h = round(h * dh, 6)
+        if w < 0 or h < 0:
+            self.count += 1
+            print(self.count)
 
         return x, y, w, h
 
@@ -29,7 +33,6 @@ class Result:
                 self.index.append(el)
 
         for el in self.index:
-            print(el)
             obj_list = el['objects']
             obj_data = []
 
@@ -37,12 +40,16 @@ class Result:
                 pos = obj['position']
                 pos['x'], pos['y'], pos['w'], pos['h'] = self.convert(pos['xmin'], pos['ymin'], pos['xmax'], pos['ymax'])
                 del pos['xmin'], pos['xmax'], pos['ymin'], pos['ymax']
+                if self.count !=0:
+                    print(el['file_name'])
+                    self.count = 0
 
                 obj['position'] = pos
                 obj_data.append(obj)
 
-            with open('json/'+el['file_name'], 'w', encoding="utf-8") as make_file:
-                json.dump(obj_data, make_file, ensure_ascii=False, indent='\t')
+            # with open('json/'+el['file_name'], 'w', encoding="utf-8") as make_file:
+            #     json.dump(obj_data, make_file, ensure_ascii=False, indent='\t')
+
 
 if __name__ == '__main__':
     result = Result()

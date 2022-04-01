@@ -2,5 +2,8 @@
 .idea
 code/yolo/*.txt
 code/json/*.json
-code/yolo_data/*.txt
-code/yolo_data/*.jpg
+code/yolo_data/train/*.txt
+code/yolo_data/train/*.jpg
+code/yolo_data/val/*.txt
+code/yolo_data/val/*.jpg
+code/data/*.jpg
