@@ -1,0 +1,17 @@
+Vehicle_Car
+Vehicle_Bus
+Vehicle_Motorcycle
+Vehicle_Unknown
+Pedestrian_Pedestrian
+Pedestrian_Bicycle
+RoadMark_StopLine
+RoadMark_Crosswalk
+RoadMark_Number
+RoadMark_Character
+RoadMarkArrow_Straight
+RoadMarkArrow_Left
+RoadMarkArrow_Right
+RoadMarkArrow_StraightLeft
+RoadMarkArrow_StraightRight
+RoadMarkArrow_Uturn
+RoadMarkArrow_Else

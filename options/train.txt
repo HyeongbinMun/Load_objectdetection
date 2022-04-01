@@ -1,0 +1,3 @@
+./darknet detector train /workspace/build/darknet/x64/data/obj.data \
+/workspace/cfg/yolov4-obj.cfg \
+/workspace/build/darknet/x64/yolov4.conv.137

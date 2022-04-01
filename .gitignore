@@ -1,0 +1,6 @@
+.venv
+.idea
+code/yolo/*.txt
+code/json/*.json
+code/yolo_data/*.txt
+code/yolo_data/*.jpg
